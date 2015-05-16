@@ -8,16 +8,16 @@ $b->addAction('index', array(
     _CLASS=>'NewActionName'
     ,_FORM=>'HelloVerify'
 ));
-$b->addAction('index_slower', array(
+$b->addAction('lazy-index', array(
     _CLASS=>'NewActionName'
-    ,_FUNCTION=>'index_slower'
+    ,_FUNCTION=>'index_laziness'
 ));
 
 
 $b->addForward('home', array(
     _PATH=>'hello'
     ,_TYPE=>'view'
-    ,_SLOWER=>'index_slower'
+    ,_LAZY_OUTPUT=>'lazy-index'
 ));
 
 
@@ -25,12 +25,12 @@ class NewActionName extends PMVC\Action
 {
     function index($m, $f){
        $go = $m->get('home');
-       $go->set('text','hello world');
+       $go->set('text','hello world'.microtime());
        return $go;
     }
 
-    function index_slower($m,$f){
-        echo "this is slower";
+    function index_laziness($m,$f){
+        echo "<hr/>this is laziness".microtime();
     }
 
 }
