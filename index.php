@@ -25,12 +25,12 @@ class NewActionName extends PMVC\Action
 {
     function index($m, $f){
        $go = $m->get('home');
-       $go->set('text','hello world'.microtime());
+       $go->set('text','hello world---'.microtime());
        return $go;
     }
 
     function index_laziness($m,$f){
-        echo "<hr/>this is laziness".microtime();
+        echo "<hr/>this is laziness---".microtime();
     }
 
 }
