@@ -5,12 +5,11 @@ ${_INIT_CONFIG}[_CLASS] = 'NewActionName';
 ${_INIT_CONFIG}[_INIT_BUILDER] = $b;
 
 $b->addAction('index', array(
-    _CLASS=>'NewActionName'
+    _FUNCTION=>array('NewActionName','index')
     ,_FORM=>'HelloVerify'
 ));
 $b->addAction('lazy-index', array(
-    _CLASS=>'NewActionName'
-    ,_FUNCTION=>'index_laziness'
+    _FUNCTION=>array('NewActionName','index_laziness')
 ));
 
 
@@ -23,13 +22,13 @@ $b->addForward('home', array(
 
 class NewActionName extends PMVC\Action
 {
-    function index($m, $f){
+    static function index($m, $f){
        $go = $m->get('home');
        $go->set('text','hello world---'.microtime());
        return $go;
     }
 
-    function index_laziness($m,$f){
+    static function index_laziness($m,$f){
         echo "<hr/>this is laziness---".microtime();
     }
 
