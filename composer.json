@@ -1,0 +1,17 @@
+{
+    "name": "pmvc-app/hello_app",
+    "description": "Hello World Plugin, show you how the pmvc work",
+    "type": "library",
+    "keywords": ["hello", "pmvc", "plug-in"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hill",
+            "email": "hill@kimo.com"
+        }
+    ],
+    "require": {
+        "pmvc/pmvc": "*"
+    },
+    "minimum-stability": "dev"
+}
