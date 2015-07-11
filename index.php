@@ -8,10 +8,10 @@ $b->addAction('index', array(
     _FUNCTION=>array('NewActionName','index')
     ,_FORM=>'HelloVerify'
 ));
+
 $b->addAction('lazy-index', array(
     _FUNCTION=>array('NewActionName','index_laziness')
 ));
-
 
 $b->addForward('home', array(
     _PATH=>'hello'
@@ -19,17 +19,23 @@ $b->addForward('home', array(
     ,_LAZY_OUTPUT=>'lazy-index'
 ));
 
+$b->addForward('laze', array(
+    _PATH=>'laze'
+    ,_TYPE=>'view'
+));
 
 class NewActionName extends PMVC\Action
 {
     static function index($m, $f){
-       $go = $m->get('home');
-       $go->set('text','hello world---'.microtime());
+       $go = $m['home'];
+       $go->set('text',' world---'.microtime());
        return $go;
     }
 
     static function index_laziness($m,$f){
-        echo "<hr/>this is laziness---".microtime();
+        $go = $m['laze'];
+        $go->set('laze_text','This is laziness');
+        return $go;
     }
 
 }
@@ -37,7 +43,7 @@ class NewActionName extends PMVC\Action
 class HelloVerify extends PMVC\ActionForm 
 {
     function validate(){
-        PMVC\plug("adkjfa;lsdkjf");
+ //       PMVC\plug("adkjfa;lsdkjf");
     }
 }
 
