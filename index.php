@@ -43,7 +43,8 @@ class NewActionName extends PMVC\Action
 class HelloVerify extends PMVC\ActionForm 
 {
     function validate(){
- //       PMVC\plug("adkjfa;lsdkjf");
+        //PMVC\plug("adkjfa;lsdkjf");
+        return true;
     }
 }
 
