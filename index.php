@@ -22,7 +22,7 @@ $b->addAction('lazy-index', array(
 $b->addForward('home', array(
     _PATH => 'hello'
     ,_TYPE => 'view'
-    ,_LAZY_OUTPUT => 'lazy-index'
+    ,_ACTION => 'lazy-index'
 ));
 
 $b->addForward('laze', array(
