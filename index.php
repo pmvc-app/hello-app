@@ -1,7 +1,10 @@
 <?php
+namespace PMVC\App\hello_app;
+
+use PMVC;
 
 $b = new PMVC\MappingBuilder();
-${_INIT_CONFIG}[_CLASS] = 'NewActionName';
+${_INIT_CONFIG}[_CLASS] = __NAMESPACE__.'\HELLO_APP';
 ${_INIT_CONFIG}[_INIT_BUILDER] = $b;
 
 $b->addAction('index', array(
@@ -9,7 +12,7 @@ $b->addAction('index', array(
         ${_INIT_CONFIG}[_CLASS],
         'index'
     )
-    ,_FORM => 'HelloVerify'
+    ,_FORM => __NAMESPACE__.'\HelloVerify'
 ));
 
 $b->addAction('lazy-index', array(
@@ -30,7 +33,7 @@ $b->addForward('laze', array(
     ,_TYPE => 'view'
 ));
 
-class NewActionName extends PMVC\Action
+class HELLO_APP extends PMVC\Action
 {
     static function index($m, $f){
        $go = $m['home'];

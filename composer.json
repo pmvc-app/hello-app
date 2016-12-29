@@ -1,8 +1,8 @@
 {
     "name": "pmvc-app/hello_app",
-    "description": "Hello World Plugin, show you how the pmvc work",
+    "description": "Hello World for PMVC APP",
     "type": "library",
-    "keywords": ["hello", "pmvc", "plug-in"],
+    "keywords": ["hello", "pmvc", "pmvc-app"],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "pmvc/pmvc": "*"
+        "pmvc/pmvc": "*",
+        "pmvc-plugin/controller": "*"
     },
     "minimum-stability": "dev"
 }
