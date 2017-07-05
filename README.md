@@ -4,7 +4,7 @@
 [![License](https://poser.pugx.org/pmvc-app/hello_app/license)](https://packagist.org/packages/pmvc-app/hello_app)
 [![Total Downloads](https://poser.pugx.org/pmvc-app/hello_app/downloads)](https://packagist.org/packages/pmvc-app/hello_app) 
 
-# PMVC Hello World Plugin 
+# PMVC Hello World APP 
 ===============
 
 ## Install with Composer
