@@ -37,13 +37,13 @@ class HELLO_APP extends PMVC\Action
 {
     static function index($m, $f){
        $go = $m['home'];
-       $go->set('text',' world---'.microtime());
+       $go->set('data', ['text'=>' world---'.microtime()]);
        return $go;
     }
 
     static function index_laziness($m,$f){
         $go = $m['laze'];
-        $go->set('laze_text','This is laziness');
+        $go->set('data', ['laze_text'=>'This is laziness']);
         return $go;
     }
 
@@ -52,7 +52,6 @@ class HELLO_APP extends PMVC\Action
 class HelloVerify extends PMVC\ActionForm 
 {
     function validate(){
-        //PMVC\plug("adkjfa;lsdkjf");
         return true;
     }
 }
