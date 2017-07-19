@@ -25,6 +25,10 @@ $b->addAction('lazy-index', [
     ] 
 ]);
 
+$b->addAction('ttfb');
+
+$b->addAction('ttfb-body', 'ttfbBody');
+
 $b->addForward('home', [ 
     _PATH => 'hello',
     _TYPE => 'view',
@@ -34,6 +38,11 @@ $b->addForward('home', [
 $b->addForward('laze', [ 
     _PATH => 'laze',
     _TYPE => 'view'
+]);
+
+$b->addForward('header', [
+    _TYPE=>'view',
+    _PATH=>'header'
 ]);
 
 class HELLO_APP extends Action
@@ -50,6 +59,21 @@ class HELLO_APP extends Action
         return $go;
     }
 
+    static function ttfb($m, $f){
+       $go = $m['header'];
+       $go->action = 'ttfb-body';
+       $view = \PMVC\plug('view');
+       $view['ttfb'] = true;
+       $view->disable();
+       return $go;
+    }
+
+    static function ttfbBody($m, $f){
+       \PMVC\plug('view')->enable();
+       $go = $m['home'];
+       $go->set('data', ['text'=>' world---'.microtime()]);
+       return $go;
+    }
 }
 
 class HelloVerify extends ActionForm 
