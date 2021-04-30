@@ -62,14 +62,11 @@ class HELLO_APP extends Action
     static function ttfb($m, $f){
        $go = $m['header'];
        $go->action = 'ttfb-body';
-       $view = \PMVC\plug('view');
-       $view['ttfb'] = true;
-       $view->disable();
+       $go->ttfb = true;
        return $go;
     }
 
     static function ttfbBody($m, $f){
-       \PMVC\plug('view')->enable();
        $go = $m['home'];
        $go->set('data', ['text'=>' world---'.microtime()]);
        return $go;
