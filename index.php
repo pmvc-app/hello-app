@@ -26,7 +26,7 @@ $b->addAction('lazy-index', [
 ]);
 
 $b->addForward('home', [ 
-    _PATH => 'hello',
+    _PATH => 'Hello',
     _TYPE => 'view',
     _ACTION => 'lazy-index'
 ]);
